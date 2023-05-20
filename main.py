@@ -15,7 +15,8 @@ if __name__ == '__main__':
     population = sort_population(population)
     start = time.time()
     current_time = 0
-    while current_time < config.max_calc_time and population[0].distance > config.min_accepted_distance:
+    current_iteration = 0
+    while current_iteration < config.iteration:
         random.shuffle(population)
         parents = selection(population, config.population_size_parents)
         children = []
@@ -29,11 +30,13 @@ if __name__ == '__main__':
         population = sort_population(candidates)
         population = population[0:config.population_size]
         current_time = time.time() - start
+        current_iteration +=1
     min_route = population[0]
     print("Minimum calculated route for " + str(config.data_path))
     print(min_route.distance)
     if config.display_route:
         print([str(x.id) + ' (' + str(x.long) + ';' + str(x.lat) + ')' for x in min_route.route])
+        print('Calculate time:' + str(current_time))
     if config.display_map:
         print_result(min_route)
 

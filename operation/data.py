@@ -39,6 +39,7 @@ def read_config_file():
     conf.max_calc_time = config.getint('main', 'MAX_CALC_TIME')
     conf.display_route = config.getboolean('main', 'DISPLAY_ROUTE')
     conf.display_map = config.getboolean('main', 'DISPLAY_MAP')
+    conf.iteration = config.getint('main', 'ITERATION')
     return conf
 
 
