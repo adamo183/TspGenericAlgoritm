@@ -35,8 +35,6 @@ def read_config_file():
     conf.population_size_child = config.getint('main', 'CHILD_POPULATION_SIZE')
     conf.population_size_parents = config.getint('main', 'PARENTS_POPULATION_SIZE')
     conf.mutation_rate = config.getfloat('main', 'MUTATION_RATE')
-    conf.min_accepted_distance = config.getint('main', 'MIN_ACCEPTED_ROUTE')
-    conf.max_calc_time = config.getint('main', 'MAX_CALC_TIME')
     conf.display_route = config.getboolean('main', 'DISPLAY_ROUTE')
     conf.display_map = config.getboolean('main', 'DISPLAY_MAP')
     conf.iteration = config.getint('main', 'ITERATION')
